@@ -1,7 +1,7 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 4021242 */
-  src: url("iconfont.woff2?t=1683877688530") format("woff2"), url("iconfont.woff?t=1683877688530") format("woff"),
-    url("iconfont.ttf?t=1683877688530") format("truetype");
+  font-family: "iconfont"; /* Project id 4553143 */
+  src: url("iconfont.woff2?t=1716114716737") format("woff2"), url("iconfont.woff?t=1716114716737") format("woff"),
+    url("iconfont.ttf?t=1716114716737") format("truetype");
 }
 
 .iconfont {
@@ -12,26 +12,26 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-refresh:before {
-  content: "\e74a";
-}
-
-.icon-theme:before {
-  content: "\e610";
-}
-
 .icon-search:before {
-  content: "\e741";
-}
-
-.icon-zhongyingwen:before {
-  content: "\e605";
+  content: "\e616";
 }
 
 .icon-exitfullscreen:before {
   content: "\e607";
 }
 
+.icon-refresh-o:before {
+  content: "\e732";
+}
+
 .icon-fullscreen:before {
-  content: "\e6d7";
+  content: "\e731";
+}
+
+.icon-zhongyingwen:before {
+  content: "\e601";
+}
+
+.icon-zhuti-04:before {
+  content: "\e600";
 }

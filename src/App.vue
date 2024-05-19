@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <el-watermark class="water_mark" v-if="isWatermark" :font="font" :content="['portal', 'Admin-portal']">
+    <el-watermark class="water_mark" v-if="isWatermark" :font="font" :content="[loginName, 'Admin-portal']">
       <router-view v-if="isRouterAlive" />
     </el-watermark>
     <template v-else>
@@ -12,6 +12,10 @@
 import { storeToRefs } from "pinia";
 import { useGlobalStore } from "@/store/modules/global";
 import { useTheme } from "@/hooks/useTheme";
+import { useUserStore } from "@/store/modules/user";
+
+const userStore = useUserStore();
+const loginName = computed(() => userStore.loginName).value.toString();
 const globalStore = useGlobalStore();
 const { isDark } = storeToRefs(globalStore);
 const isRouterAlive = ref(true);

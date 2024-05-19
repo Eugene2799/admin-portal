@@ -1,7 +1,7 @@
 <template>
   <el-dropdown trigger="click">
     <div class="avatar">
-      <img src="@/assets/logo/logo.png" alt="avatar" />
+      <el-icon class="icon"><Avatar /></el-icon>
     </div>
     <template #dropdown>
       <el-dropdown-menu class="user_info">
@@ -16,14 +16,6 @@
             <Edit />
           </el-icon>
           {{ $t("header.changePassword") }}
-        </el-dropdown-item>
-        <el-dropdown-item>
-          <el-icon><Memo /></el-icon>
-          <a href="" target="_blank">vue2基础组件文档</a>
-        </el-dropdown-item>
-        <el-dropdown-item>
-          <el-icon><Memo /></el-icon>
-          <a href="" target="_blank">vue3基础组件文档</a>
         </el-dropdown-item>
         <el-dropdown-item @click="logout" divided>
           <el-icon>
@@ -78,7 +70,9 @@ const openDialog = (ref: string) => {
   overflow: hidden;
   cursor: pointer;
   border-radius: 50%;
-  img {
+  .icon {
+    font-size: 2em;
+    color: var(--el-color-primary);
     width: 100%;
     height: 100%;
   }

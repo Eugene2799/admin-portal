@@ -1,35 +1,20 @@
 <template>
   <t-layout-page class="dashboard-container">
-    <!-- github角标 -->
-    <github-corner class="github-corner" />
     <t-layout-page-item>
       <!-- 用户信息 -->
       <div class="mb-8">
-        <el-card class="w-full">
-          <div class="flex-box flex-between flex-wrap">
-            <div class="flex-box flex-ver-v">
-              <img class="user-avatar" src="@/assets/logo/logo.png" />
-              <span class="ml-[10px] text-[16px]" style="margin-left: 5px">{{ username || "portal" }}</span>
-            </div>
-            <div class="flex-box flex-ver-v" style="margin-top: 5px">
-              <a style="padding: 0 5px" href="https://github.com/vuejs/vue" target="_blank">
-                <img src="https://img.shields.io/badge/vue-3.4.21-brightgreen.svg" alt="vue3" />
-              </a>
-              <a style="padding: 0 5px" href="https://github.com/vitejs/vite" target="_blank">
-                <img src="https://img.shields.io/badge/vite-4.3.9-brightgreen.svg" alt="vite4" />
-              </a>
+        <div class="flex-box flex-between flex-wrap">
+          <div class="flex-box flex-ver-v">
+            <el-icon class="user-avatar"><Avatar /></el-icon>
+            <div>
+              当前登陆账号是：{{
+                loginName === "user"
+                  ? `${loginName}（即：游客账号---> 没有大屏、高德地图菜单；系统管理--没有部分按钮）`
+                  : `${loginName}（即：超管账号）`
+              }}
             </div>
           </div>
-        </el-card>
-      </div>
-    </t-layout-page-item>
-    <t-layout-page-item>
-      <div>
-        当前登陆账号是：{{
-          loginName === "user"
-            ? `${loginName}（即：游客账号---> 没有大屏、高德地图菜单；系统管理--没有部分按钮）`
-            : `${loginName}（即：超管账号）`
-        }}
+        </div>
       </div>
     </t-layout-page-item>
     <t-layout-page-item>
@@ -52,14 +37,11 @@
 </template>
 <script setup lang="ts" name="Dashboard">
 import { useUserStore } from "@/store/modules/user";
-
-import GithubCorner from "./components/GithubCorner.vue";
 import BarChart from "./components/BarChart.vue";
 import PieChart from "./components/PieChart.vue";
 import RadarChart from "./components/RadarChart.vue";
 
 const userStore = useUserStore();
-const username = computed(() => userStore.name);
 const loginName = computed(() => userStore.loginName);
 const { appContext } = getCurrentInstance() as any;
 const global = appContext.config.globalProperties;
@@ -75,33 +57,8 @@ console.log("获取所有业务api接口", global.$api);
     width: 40px;
     height: 40px;
     border-radius: 50%;
-  }
-
-  .w-full {
-    width: 100%;
-  }
-
-  .github-corner {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    z-index: 99;
-    border: 0;
-  }
-
-  .data-box {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    font-weight: bold;
-    color: var(--el-text-color-regular);
-    background: var(--el-bg-color-overlay);
-    border-color: var(--el-border-color);
-    box-shadow: var(--el-box-shadow-dark);
-  }
-
-  .svg-icon {
-    fill: currentcolor !important;
+    font-size: 2em;
+    color: var(--el-color-primary);
   }
 }
 </style>

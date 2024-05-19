@@ -1,20 +1,12 @@
 <template>
   <div class="login">
-    <div class="square" v-for="index in 10" :key="index" :style="`--i: ${index - 1}`"></div>
     <div class="content">
-      <div :class="`star${index}`" v-for="index in 6" :key="index"></div>
-      <el-tooltip content="暗黑模式切换" effect="dark" placement="top">
-        <SwitchDark class="dark" />
-      </el-tooltip>
-      <el-tooltip content="水印是否显示" effect="dark" placement="top">
-        <el-switch class="watermark" active-text="水印" v-model="isWatermark" />
-      </el-tooltip>
       <div class="login-left">
         <img class="login-left-img" src="@/assets/logo/login.png" alt="login" />
       </div>
       <div class="input-format">
         <div class="form_content">
-          <img src="@/assets/images/logo.jpg" class="logon" />
+          <el-icon class="logon"><Avatar /></el-icon>
           <div class="title_box">
             <h2 class="title">Admin-Portal</h2>
           </div>
@@ -60,7 +52,6 @@
   </div>
 </template>
 <script setup lang="ts" name="login">
-import SwitchDark from "@/components/SwitchDark/index.vue";
 import Cookies from "js-cookie";
 import { encrypt, decrypt } from "@/utils/jsencrypt";
 import type { FormInstance } from "element-plus";
@@ -70,10 +61,6 @@ import { getTimeState } from "@/utils";
 import { initDynamicRouter } from "@/router/modules/dynamicRouter";
 import { useTabsStore } from "@/store/modules/tabs";
 import { useKeepAliveStore } from "@/store/modules/keepAlive";
-import { storeToRefs } from "pinia";
-import { useGlobalStore } from "@/store/modules/global";
-const globalStore = useGlobalStore();
-const { isWatermark } = storeToRefs(globalStore);
 const tabStore = useTabsStore();
 const keepAliveStore = useKeepAliveStore();
 const userStore = useUserStore();
@@ -182,16 +169,6 @@ const handleLogin = async (formEl: FormInstance | undefined) => {
     transform: translateY(-100vh);
   }
 }
-@keyframes expand {
-  from {
-    letter-spacing: -20px;
-    filter: blur(2px);
-  }
-  to {
-    letter-spacing: 0px;
-    filter: blur(0px);
-  }
-}
 $duration: 600s;
 $count: 1400;
 .login {
@@ -203,68 +180,6 @@ $count: 1400;
   background-image: linear-gradient(#4d3af9, #255fff, #3f89fb, #5088ff, #1a68ff);
   background-size: cover;
   position: relative;
-  .square {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    background: #4d86ff;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-right: 1px solid #3f89fb;
-    border-bottom: 1px solid #3f89fb;
-    border-radius: 10px;
-    animation: animate 12s linear infinite;
-    animation-delay: calc(-1s * var(--i));
-    &:nth-child(1) {
-      top: -10px;
-      right: 50%;
-    }
-    &:nth-child(2) {
-      top: 10%;
-      right: 20%;
-    }
-    &:nth-child(3) {
-      top: 10%;
-      right: 10px;
-    }
-    &:nth-child(4) {
-      bottom: 10%;
-      right: 15%;
-      width: 80px;
-      height: 80px;
-    }
-    &:nth-child(5) {
-      top: 180px;
-      left: 20px;
-    }
-    &:nth-child(6) {
-      bottom: 80px;
-      left: 20px;
-      width: 70px;
-      height: 70px;
-    }
-    &:nth-child(7) {
-      bottom: 40%;
-      right: 50px;
-      width: 60px;
-      height: 60px;
-      background: rgba(255, 255, 255, 0.2);
-    }
-    &:nth-child(8) {
-      top: 120px;
-      left: 220px;
-      width: 70px;
-      height: 70px;
-    }
-    &:nth-child(9) {
-      bottom: 10%;
-      right: 40%;
-    }
-    &:nth-child(10) {
-      bottom: 40%;
-      right: 45%;
-    }
-  }
   .content {
     display: flex;
     align-items: center;
@@ -331,9 +246,8 @@ $count: 1400;
         z-index: 1;
         position: relative;
         .logon {
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
+          font-size: 7em;
+          color: var(--el-color-primary);
         }
         .title_box {
           filter: contrast(10);
@@ -343,7 +257,6 @@ $count: 1400;
             font-family: PingFangSC-Medium, "PingFang SC";
             font-weight: 600;
             color: var(--el-text-color-primary);
-            animation: expand 5s forwards infinite;
           }
         }
 
@@ -368,31 +281,6 @@ $count: 1400;
             height: 39px;
             margin-left: 2px;
           }
-        }
-      }
-    }
-    @for $i from 1 through 6 {
-      $duration: floor(calc($duration / 2));
-      $count: floor(calc($count / 2));
-      .star#{$i} {
-        $size: #{$i}px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: $size;
-        height: $size;
-        border-radius: 50%;
-        box-shadow: getShadows($count);
-        animation: moveUp $duration linear infinite;
-        &::after {
-          position: fixed;
-          top: 100vh;
-          left: 0;
-          width: $size;
-          height: $size;
-          content: "";
-          border-radius: inherit;
-          box-shadow: inherit;
         }
       }
     }

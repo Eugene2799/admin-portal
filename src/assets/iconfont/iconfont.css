@@ -1,7 +1,7 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4553143 */
-  src: url("iconfont.woff2?t=1716114716737") format("woff2"), url("iconfont.woff?t=1716114716737") format("woff"),
-    url("iconfont.ttf?t=1716114716737") format("truetype");
+  src: url("iconfont.woff2?t=1716119723973") format("woff2"), url("iconfont.woff?t=1716119723973") format("woff"),
+    url("iconfont.ttf?t=1716119723973") format("truetype");
 }
 
 .iconfont {
@@ -12,6 +12,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-idle:before {
+  content: "\e743";
+}
+
+.icon-anquan:before {
+  content: "\e6fc";
+}
+
 .icon-search:before {
   content: "\e616";
 }
@@ -20,7 +28,7 @@
   content: "\e607";
 }
 
-.icon-refresh-o:before {
+.icon-refresh:before {
   content: "\e732";
 }
 
@@ -32,6 +40,6 @@
   content: "\e601";
 }
 
-.icon-zhuti-04:before {
+.icon-theme:before {
   content: "\e600";
 }

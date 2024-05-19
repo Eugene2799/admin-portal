@@ -152,8 +152,8 @@
                 <span>{{ item.monitorTimeVO && item.monitorTimeVO.endTime }}</span>
               </div>
             </div>
-            <div v-if="item.text == '闲置' && !item.data.length" class="idleImgDiv">
-              <img src="@/assets/images/idle.png" alt="" />
+            <div v-if="item.text == '闲置' && !item.data.length" class="idleIDiv">
+              <i :class="'iconfont icon-idle'"></i>
               <span>暂无数据</span>
             </div>
           </div>
@@ -683,15 +683,15 @@ const workShopAutoPageFuc = (flag: any) => {
       height: 4rem;
       position: relative;
       margin-right: 0.4%;
-      .idleImgDiv {
+      .idleIDiv {
         height: 3rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        img {
-          width: 1rem;
-          height: 1rem;
+        i {
+          font-size: 3em;
+          color: #65789b;
         }
         & > span {
           color: #65789b;

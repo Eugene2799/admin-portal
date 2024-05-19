@@ -1,9 +1,9 @@
 {
-  "name": "wocwin-admin",
+  "name": "admin-portal",
   "private": false,
   "version": "0.0.1",
-  "description": "Wocwin-Admin后台管理系统模板",
-  "author": "wocwin",
+  "description": "admin-portal后台管理系统模板",
+  "author": "eugene2799",
   "type": "module",
   "scripts": {
     "serve": "vite --mode dev",

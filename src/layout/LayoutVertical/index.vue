@@ -5,7 +5,7 @@
       <div class="aside-box" :style="{ width: isCollapse ? '65px' : '210px' }">
         <div class="logo flx-center" @click="goIndex">
           <img class="logo-img" src="@/assets/logo/logo.png" alt="logo" />
-          <span class="logo-text" v-show="!isCollapse">wocwin Admin</span>
+          <span class="logo-text" v-show="!isCollapse">Admin Portal</span>
         </div>
         <el-scrollbar>
           <el-menu
@@ -48,7 +48,7 @@ const isCollapse = computed(() => globalStore.isCollapse);
 const menuList = computed(() => authStore.showMenuListGet);
 const activeMenu = computed(() => (route.meta.activeMenu ? route.meta.activeMenu : route.path) as string);
 const goIndex = () => {
-  window.location.href = qiankunWindow.__POWERED_BY_QIANKUN__ ? "/wocwin-qiankun/" : "/wocwin-admin/";
+  window.location.href = qiankunWindow.__POWERED_BY_QIANKUN__ ? "/qiankun-portal/" : "/admin-portal/";
 };
 </script>
 

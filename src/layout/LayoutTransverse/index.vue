@@ -4,7 +4,7 @@
     <el-header>
       <div class="logo flx-center" @click="goIndex">
         <img class="logo-img" src="@/assets/logo/logo.png" alt="logo" />
-        <span class="logo-text">wocwin Admin</span>
+        <span class="logo-text">Admin Portal</span>
       </div>
       <el-menu mode="horizontal" :default-active="activeMenu" :router="false" :unique-opened="true">
         <!-- 不能直接使用 SubMenu 组件，无法触发 el-menu 隐藏省略功能 -->
@@ -54,7 +54,7 @@ const handleClickMenu = (subItem: Menu.MenuOptions) => {
   router.push(subItem.path);
 };
 const goIndex = () => {
-  window.location.href = qiankunWindow.__POWERED_BY_QIANKUN__ ? "/wocwin-qiankun/" : "/wocwin-admin/";
+  window.location.href = qiankunWindow.__POWERED_BY_QIANKUN__ ? "/qiankun-portal/" : "/admin-portal/";
 };
 </script>
 

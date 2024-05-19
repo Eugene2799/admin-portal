@@ -1,7 +1,7 @@
 import { KeepAliveState } from "@/store/interface";
 
 export const useKeepAliveStore = defineStore({
-  id: "wocwin-keepAlive",
+  id: "portal-keepAlive",
   state: (): KeepAliveState => ({
     keepAliveName: []
   }),

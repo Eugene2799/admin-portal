@@ -24,7 +24,7 @@ import { qiankunWindow } from "vite-plugin-qiankun/dist/helper";
  * @param meta.isKeepAlive ==> 是否缓存
  * */
 const router = createRouter({
-  history: createWebHistory("/wocwin-admin/"),
+  history: createWebHistory("/admin-portal/"),
   routes: [...staticRouter, ...errorRouter],
   strict: false,
   scrollBehavior: () => ({ left: 0, top: 0 })
@@ -41,7 +41,7 @@ router.beforeEach(async (to, from, next) => {
   NProgress.start();
   if (getToken()) {
     // 2.动态设置标题
-    const title = "Wocwin-Admin";
+    const title = "Admin-Portal";
     document.title = to.meta.title ? `${to.meta.title} - ${title}` : title;
     // 获取用户信息
     if (!userStore.userInfo?.userId) {

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <el-watermark class="water_mark" v-if="isWatermark" :font="font" :content="['wocwin', 'Wocwin-Admin']">
+    <el-watermark class="water_mark" v-if="isWatermark" :font="font" :content="['portal', 'Admin-portal']">
       <router-view v-if="isRouterAlive" />
     </el-watermark>
     <template v-else>

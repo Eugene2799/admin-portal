@@ -4,7 +4,7 @@ import { removeToken, setToken, getToken } from "@/utils/cookies";
 import { ElMessage } from "element-plus";
 import { login, getInfo, logout } from "@/api/modules/login";
 export const useUserStore = defineStore({
-  id: "wocwin-user",
+  id: "portal-user",
   state: (): UserState => ({
     token: getToken() || "",
     loginName: "",
@@ -75,5 +75,5 @@ export const useUserStore = defineStore({
       this.userInfo = {};
     }
   },
-  persist: piniaPersistConfig("wocwin-user")
+  persist: piniaPersistConfig("portal-user")
 });

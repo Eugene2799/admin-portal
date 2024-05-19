@@ -2,7 +2,7 @@
   <t-layout-page class="anth_button">
     <t-layout-page-item class="anth_button_item">
       <el-alert
-        title="目前按钮权限是根据登录账号实现，模拟后台根据不同用户角色返回对应数据按钮集合，（wocwin 账号可查看所有按钮、user 账号只可查看部分按钮---系统管理模块）"
+        title="目前按钮权限是根据登录账号实现，模拟后台根据不同用户角色返回对应数据按钮集合，（portal 账号可查看所有按钮、user 账号只可查看部分按钮---系统管理模块）"
         :closable="false"
         type="success"
         effect="dark"

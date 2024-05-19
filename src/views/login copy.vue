@@ -8,10 +8,10 @@
       <div class="star5"></div>
       <div class="input-format">
         <img src="@/assets/images/logo.jpg" class="logon" />
-        <h2 class="title">Wocwin-Admin</h2>
+        <h2 class="title">Portal-Admin</h2>
         <el-form ref="loginFormRef" :model="loginForm" :rules="loginRules" class="login-form">
           <el-form-item prop="username">
-            <el-input v-model="loginForm.username" clearable type="text" placeholder="wocwin/user">
+            <el-input v-model="loginForm.username" clearable type="text" placeholder="portal/user">
               <template #prefix>
                 <el-icon>
                   <User />
@@ -106,7 +106,7 @@ const handleLogin = async (formEl: FormInstance | undefined) => {
           router.push({ path: "/" });
           ElNotification({
             title: getTimeState(),
-            message: "欢迎登录 Wocwin-Admin",
+            message: "欢迎登录 Admin-Portal",
             type: "success",
             duration: 3000
           });

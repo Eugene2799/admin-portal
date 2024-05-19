@@ -16,11 +16,11 @@
         <div class="form_content">
           <img src="@/assets/images/logo.jpg" class="logon" />
           <div class="title_box">
-            <h2 class="title">Wocwin-Admin</h2>
+            <h2 class="title">Admin-Portal</h2>
           </div>
           <el-form ref="loginFormRef" :model="loginForm" :rules="loginRules" class="login-form">
             <el-form-item prop="username">
-              <el-input v-model="loginForm.username" clearable type="text" placeholder="wocwin/user">
+              <el-input v-model="loginForm.username" clearable type="text" placeholder="portal/user">
                 <template #prefix>
                   <el-icon>
                     <User />
@@ -79,7 +79,7 @@ const keepAliveStore = useKeepAliveStore();
 const userStore = useUserStore();
 
 const loginForm = reactive({
-  username: "wocwin",
+  username: "portal",
   password: "123456",
   rememberMe: false
 });
@@ -88,9 +88,9 @@ const loginRules = reactive({
   password: [{ required: true, trigger: "blur", message: "密码不能为空" }]
 });
 // 获取cookie中记录用户信息
-const username = Cookies.get("wocwinUsername");
-const password = Cookies.get("wocwinPassword");
-const rememberMe = Cookies.get("wocwinRememberMe");
+const username = Cookies.get("portalUsername");
+const password = Cookies.get("portalPassword");
+const rememberMe = Cookies.get("portalRememberMe");
 loginForm.username = username ? username : loginForm.username;
 loginForm.password = password ? decrypt(password) : loginForm.password;
 loginForm.rememberMe = rememberMe ? Boolean(rememberMe) : false;
@@ -106,17 +106,17 @@ const handleLogin = async (formEl: FormInstance | undefined) => {
     if (!valid) return;
     loading.value = true;
     if (loginForm.rememberMe) {
-      Cookies.set("wocwinUsername", loginForm.username, { expires: 30 });
-      Cookies.set("wocwinPassword", encrypt(loginForm.password), {
+      Cookies.set("portalUsername", loginForm.username, { expires: 30 });
+      Cookies.set("portalPassword", encrypt(loginForm.password), {
         expires: 30
       });
-      Cookies.set("wocwinRememberMe", String(loginForm.rememberMe), {
+      Cookies.set("portalRememberMe", String(loginForm.rememberMe), {
         expires: 30
       });
     } else {
-      Cookies.remove("wocwinUsername");
-      Cookies.remove("wocwinPassword");
-      Cookies.remove("wocwinRememberMe");
+      Cookies.remove("portalUsername");
+      Cookies.remove("portalPassword");
+      Cookies.remove("portalRememberMe");
     }
     userStore
       .Login(loginForm)
@@ -128,7 +128,7 @@ const handleLogin = async (formEl: FormInstance | undefined) => {
           router.push({ path: "/" });
           ElNotification({
             title: getTimeState(),
-            message: `欢迎登录 Wocwin-Admin；${res.data.loginName === "wocwin" ? "超管账号" : "游客账号"}`,
+            message: `欢迎登录 Admin-Portal；${res.data.loginName === "portal" ? "超管账号" : "游客账号"}`,
             type: "success",
             duration: 3000
           });

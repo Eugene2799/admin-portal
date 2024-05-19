@@ -24,7 +24,7 @@
     </div>
     <el-aside :class="{ 'not-aside': !subMenuList.length }" :style="{ width: isCollapse ? '65px' : '210px' }">
       <div class="logo flx-center">
-        <span class="logo-text" v-show="subMenuList.length">{{ isCollapse ? "W" : "wocwin Admin" }}</span>
+        <span class="logo-text" v-show="subMenuList.length">{{ isCollapse ? "W" : "Admin" }}</span>
       </div>
       <el-scrollbar>
         <el-menu
@@ -95,7 +95,7 @@ const changeSubMenu = (item: Menu.MenuOptions) => {
   router.push(item.path);
 };
 const goIndex = () => {
-  window.location.href = qiankunWindow.__POWERED_BY_QIANKUN__ ? "/wocwin-qiankun/" : "/wocwin-admin/";
+  window.location.href = qiankunWindow.__POWERED_BY_QIANKUN__ ? "/qiankun-portal/" : "/admin-portal/";
 };
 </script>
 

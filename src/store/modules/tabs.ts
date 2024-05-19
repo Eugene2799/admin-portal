@@ -3,7 +3,7 @@ import { TabsState, TabsMenuProps } from "@/store/interface";
 import piniaPersistConfig from "@/config/piniaPersist";
 
 export const useTabsStore = defineStore({
-  id: "wocwin-tabs",
+  id: "portal-tabs",
   state: (): TabsState => ({
     tabsMenuList: []
   }),
@@ -45,5 +45,5 @@ export const useTabsStore = defineStore({
       });
     }
   },
-  persist: piniaPersistConfig("wocwin-tabs")
+  persist: piniaPersistConfig("portal-tabs")
 });

@@ -5,7 +5,7 @@
       <div class="header-lf">
         <div class="logo flx-center" @click="goIndex">
           <img class="logo-img" src="@/assets/logo/logo.png" alt="logo" />
-          <span class="logo-text">wocwin Admin</span>
+          <span class="logo-text">Admin Portal</span>
         </div>
         <ToolBarLeft />
       </div>
@@ -54,7 +54,7 @@ const isCollapse = computed(() => globalStore.isCollapse);
 const menuList = computed(() => authStore.showMenuListGet);
 const activeMenu = computed(() => (route.meta.activeMenu ? route.meta.activeMenu : route.path) as string);
 const goIndex = () => {
-  window.location.href = qiankunWindow.__POWERED_BY_QIANKUN__ ? "/wocwin-qiankun/" : "/wocwin-admin/";
+  window.location.href = qiankunWindow.__POWERED_BY_QIANKUN__ ? "/qiankun-portal/" : "/admin-portal/";
 };
 </script>
 

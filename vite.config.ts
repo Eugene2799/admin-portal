@@ -15,7 +15,7 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
   // console.log("env", env);
 
   return {
-    base: "/wocwin-admin/",
+    base: "/admin-portal/",
     root,
     resolve: {
       alias: {

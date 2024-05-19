@@ -19,11 +19,11 @@
         </el-dropdown-item>
         <el-dropdown-item>
           <el-icon><Memo /></el-icon>
-          <a href="https://wocwin.github.io/t-ui/" target="_blank">vue2基础组件文档</a>
+          <a href="" target="_blank">vue2基础组件文档</a>
         </el-dropdown-item>
         <el-dropdown-item>
           <el-icon><Memo /></el-icon>
-          <a href="https://wocwin.github.io/t-ui-plus/" target="_blank">vue3基础组件文档</a>
+          <a href="" target="_blank">vue3基础组件文档</a>
         </el-dropdown-item>
         <el-dropdown-item @click="logout" divided>
           <el-icon>
@@ -57,7 +57,7 @@ const logout = () => {
   }).then(async () => {
     // 1.执行退出登录接口
     await userStore.LogOut();
-    window.location.href = qiankunWindow.__POWERED_BY_QIANKUN__ ? "/wocwin-qiankun/" : "/wocwin-admin/";
+    window.location.href = qiankunWindow.__POWERED_BY_QIANKUN__ ? "/qiankun-protal/" : "/admin-portal/";
     ElMessage.success("退出登录成功！");
   });
 };

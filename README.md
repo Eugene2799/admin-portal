@@ -1,48 +1,10 @@
-# wocwin-admin 项目
-
-> 是基于 Vue3.2、TypeScript、Vite4、Pinia、Element-Plus 开源的一套后台管理模板
->
-> 此项目集成了微前端 qiankun（即可以当做一个子应用）
-
-
-### 在线预览
-
-- Link：<https://wocwin.github.io/wocwin-admin/>
-> 账号：wocwin ; user  密码都是：123456
-
-### 代码仓库
-
-- GitHub：<https://github.com/wocwin/wocwin-admin>
-- Gitee：<https://gitee.com/wocwin/wocwin-admin>
-
-### 项目功能
-
-- 使用 Vue3.2 + TypeScript 开发，单文件组件 `setup语法糖`
-- 采用 Vite 作为项目开发、打包工具（配置了 Gzip 打包、TSX 语法、跨域代理）
-- 整个项目集成了 TypeScript、i18n 国际化
-- 使用 Pinia 替代 Vuex，轻量、简单、易用（ 集成了持久化插件）
-- 使用 TypeScript 对 Axios 整个二次封装 （全局错误拦截）
-- 使用了基于 [Element-plus 二次封装 t-ui-plus 组件](https://github.com/wocwin/t-ui-plus) ，里面有常用的 table、条件查询、form 表单、下拉选择组件等
-- 使用 vue-router 进行路由权限拦截、路由懒加载
-- 使用 KeepAlive 对页面进行缓存，支持多级嵌套页面缓存
-- 使用 Prettier 统一格式化代码，集成 Eslint 代码校验规范
-- 项目支持多种常规的布局模式；同时支持主题切换、暗黑模式、灰色模式。
-- 项目支持菜单按钮权限（wocwin:可以看见所有，user:无法看见大屏、高德地图菜单及部分系统管理的操作按钮）。
-
-### 动态效果图
-
-- Link：<https://blog.csdn.net/cwin8951/article/details/130269505>
+# admin-portal 项目
 
 ### 安装使用
 
-> #### 注意: 本地环境需要安装 [Node.js 16.x+](https://nodejs.org/en)、[pnpm 7.x+](https://github.com/pnpm/pnpm/)
+> #### 注意: 本地环境需要安装 [Node.js 18.x+](https://nodejs.org/en)、[pnpm 8.x+](https://github.com/pnpm/pnpm/)
 
 ```shell script
-# Gitee
-git clone https://gitee.com/wocwin/wocwin-admin.git
-# GitHub
-git clone https://github.com/wocwin/wocwin-admin.git
-
 # 安装pnpm
 
 npm install pnpm -g
@@ -64,7 +26,7 @@ pnpm lint:prettier
 ### 项目结构目录
 
 ```text
-Wocwin-Admin
+admin-portal
 ├─ build                  # Vite 配置项
 ├─ public                 # 静态资源文件（该文件夹不会被打包）
 ├─ src
@@ -107,13 +69,6 @@ Wocwin-Admin
 └─ vite.config.ts         # vite 全局配置文件
 ```
 
-### 项目后台接口 
-
-项目后台接口完全采用 Mock 数据，感谢以下 Mock 平台支持：
-
-- FastMock： https://www.fastmock.site(已停止服务)
-- EasyMock：https://mock.mengxuegu.com
-
 ### Git 提交规范
 
 - `ci`: ci 配置文件和脚本的变动;
@@ -126,9 +81,3 @@ Wocwin-Admin
 - `docs`: 文档变动;
 - `test`: 补充缺失的测试用例或者修正现有的测试用例;
 - `revert`: 回滚操作;
-
-### 微信交流（请备注wocwin-admin）
-
-|                微信二维码                 |
-| :---------------------------------------: |
-| <img src="./public/wocwin.jpg" width=170> |

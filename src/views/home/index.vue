@@ -9,7 +9,7 @@
           <div class="flex-box flex-between flex-wrap">
             <div class="flex-box flex-ver-v">
               <img class="user-avatar" src="@/assets/logo/logo.png" />
-              <span class="ml-[10px] text-[16px]" style="margin-left: 5px">{{ username || "wocwin" }}</span>
+              <span class="ml-[10px] text-[16px]" style="margin-left: 5px">{{ username || "portal" }}</span>
             </div>
             <div class="flex-box flex-ver-v" style="margin-top: 5px">
               <a style="padding: 0 5px" href="https://github.com/vuejs/vue" target="_blank">
@@ -18,15 +18,6 @@
               <a style="padding: 0 5px" href="https://github.com/vitejs/vite" target="_blank">
                 <img src="https://img.shields.io/badge/vite-4.3.9-brightgreen.svg" alt="vite4" />
               </a>
-              <a style="padding: 0 5px" href="https://github.com/wocwin/wocwin-admin/stargazers" target="_blank">
-                <img src="https://img.shields.io/github/stars/wocwin/wocwin-admin.svg" alt="wocwin-admin" />
-              </a>
-            </div>
-            <div class="space-x-2 flex-box flex-ver-v">
-              <el-divider direction="vertical" />
-              <el-link target="_blank" type="success" href="https://gitee.com/wocwin/wocwin-admin">Gitee源码</el-link>
-              <el-divider direction="vertical" />
-              <el-link target="_blank" type="primary" href="https://github.com/wocwin/wocwin-admin">GitHub源码</el-link>
             </div>
           </div>
         </el-card>

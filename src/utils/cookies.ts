@@ -1,7 +1,7 @@
 import Cookies from "js-cookie";
 class Keys {
-  static sidebarStatusKey = "wocwin-sidebarStatusKey";
-  static sizeKey = "wocwin-sizeKey";
+  static sidebarStatusKey = "portal-sidebarStatusKey";
+  static sizeKey = "portal-sizeKey";
   static tokenKey = "authorization";
 }
 export const getSidebarStatus = () => Cookies.get(Keys.sidebarStatusKey);

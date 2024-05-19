@@ -1,6 +1,6 @@
 {
   "id": "4021242",
-  "name": "wocwin-admin",
+  "name": "admin-portal",
   "font_family": "iconfont",
   "css_prefix_text": "icon-",
   "description": "vue3+vite+ts",

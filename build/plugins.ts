@@ -50,7 +50,7 @@ export const createVitePlugins = (): (PluginOption | PluginOption[])[] => {
     // 注入变量到 html 文件
     createHtmlPlugin({
       inject: {
-        data: { title: "Wocwin-Admin" }
+        data: { title: "Admin-Portal" }
       }
     })
     // visualizer({

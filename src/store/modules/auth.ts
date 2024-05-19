@@ -4,7 +4,7 @@ import { getFlatMenuList, getShowMenuList, getAllBreadcrumbList } from "@/utils"
 import { getRouters, getUserRouters, getPermBtm, getUserPermBtm } from "@/api/modules/login";
 import { useUserStore } from "@/store/modules/user";
 export const useAuthStore = defineStore({
-  id: "wocwin-auth",
+  id: "portal-auth",
   state: (): AuthState => ({
     // 按钮权限列表
     authButtonList: [],

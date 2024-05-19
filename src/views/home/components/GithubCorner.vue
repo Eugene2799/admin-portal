@@ -1,5 +1,5 @@
 <template>
-  <a href="https://github.com/wocwin/wocwin-admin" target="_blank" class="github-corner" aria-label="View source on Github">
+  <a href="" target="_blank" class="github-corner" aria-label="View source on Github">
     <svg width="80" height="80" viewBox="0 0 250 250" style="color: #fff; fill: #40c9c6" aria-hidden="true">
       <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z" />
       <path
